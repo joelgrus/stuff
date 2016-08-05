@@ -3,8 +3,6 @@ class Quantity(object):
     pass
 
 
-from unit import Quantity
-
 def test():
     q = Quantity
     users = q('users', 10**4)
