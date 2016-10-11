@@ -1,5 +1,3 @@
-import java.util.HashMap;
-import java.util.Map;
 import java.lang.System;
 
 
@@ -10,4 +8,5 @@ public class Quantity {
         Quantity q2 = new Quantity(4.0, "meters");
         System.out.println(q.toString() + " * " + q2.toString() + " = " + q.multiply(q2).toString());
     }
+    // division, addition, exponentation, ...
 }
