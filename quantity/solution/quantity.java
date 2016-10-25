@@ -1,3 +1,5 @@
+// cheating isn't cool
+
 import java.util.HashMap;
 import java.util.Map;
 import java.lang.System;
