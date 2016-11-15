@@ -14,9 +14,11 @@ def test_multiply():
 
 
 def test_power():
-    time = q('seconds', 1.3 * 10**-12)
-    print '\nexponentiation:\n({})^-1\n=\n{}'.format(time, time**-1)
-    # 7.69e+11 * seconds^-1
+    cycle_time = q('seconds', 4.2 * 10**-10)
+    hz_conversion = q('seconds') * q('hertz')
+    frequency = cycle_time**-1 * hz_conversion
+    print '\nexponentiation:\n({})^-1\n=\n{}'.format(cycle_time, frequency)
+    # 2.38e+09 * hertz
 
 
 def test_divide():
