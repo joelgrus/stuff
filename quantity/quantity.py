@@ -9,21 +9,22 @@ q = Quantity
 def test_multiply():
     length = q('meters', 3)
     width = q('meters', 4)
-    print '{} * {} = {}'.format(length, width, length * width)
+    print '\nmultiplication:\n{} * {}\n=\n{}'.format(length, width, length * width)
     # (something similar to) 12 * meters^2
 
 
 def test_power():
-    length = q('millimeters', 5)
-    print '{}^3 = {}'.format(length, length**3)
-    # 125 * millimeters^3
+    time = q('seconds', 1.3 * 10**-12)
+    print '\nexponentiation:\n({})^-1\n=\n{}'.format(time, time**-1)
+    # 7.69e+11 * seconds^-1
 
 
 def test_divide():
-    users = q('users', 10**4)
-    req_per_user_day = q('requests', 5) / (q('users', 1) * q('day', 1))
-    print '{} * {} = {}'.format(users, req_per_user_day, users * req_per_user_day)
-    # 50000 * requests * day^-1
+    requests_per_day = q('requests', 10**6) / q('day')
+    users_per_day = q('users', 3 * 10**4) / q('day')
+    requests_per_user = requests_per_day / users_per_day
+    print '\ndivision:\n{} / {}\n=\n{}'.format(requests_per_day, users_per_day, requests_per_user)
+    # 33.33 requests * user^-1
 
 
 def test_usability():
@@ -40,7 +41,7 @@ def test_usability():
     import math
     instances_deployed = math.ceil(instances_needed.magnitude) * q(instances_needed.units)
     utilization = instances_needed / instances_deployed
-    print 'need {} ({}) for {} (utilization: {})'.format(
+    print '\nusability:\nneed {}\n({})\nfor {}\n(utilization: {})\n'.format(
                 cores_needed,
                 instances_deployed,
                 scrapes_per_site * sites_per_day,
