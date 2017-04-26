@@ -39,9 +39,13 @@ class Quantity(object):
     def __div__(a, b):
         return a * b**-1
 
+    __truediv__ = __div__
+
     # not sure if a concise general definition with / or __div__ is possible
     def __rdiv__(b, a):
         return a * b**-1
+
+    __rtruediv__ = __rdiv__
 
     def __add__(a, b):
         if a.units != b.units:
